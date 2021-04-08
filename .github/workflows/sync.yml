@@ -15,4 +15,5 @@ jobs:
     steps:
       - name: test
         run: 
-          echo "hello"
+          bash ./sync.sh ${{ secrets.GITEE_RSA_PRIVATE_KEY }}
+          
