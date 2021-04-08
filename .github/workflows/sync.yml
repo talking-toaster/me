@@ -4,9 +4,9 @@ on:
   push:
     branches:
       - main
-  schedule:
+  #schedule:
     # * is a special character in YAML so you have to quote this string
-    - cron:  '2 * * * *'
+    #- cron:  '2 * * * *'
 
 jobs:
   build:
@@ -27,4 +27,4 @@ jobs:
           # 注意替换为你的 Gitee 目标仓库地址
           #destination-repo: git@gitee.com:Doocs/advanced-java.git
           #https://gitee.com/talking-toaster/we.git
-          destination-repo: git@gitee.com:talking-toaster/we.git
+          #destination-repo: git@gitee.com:talking-toaster/we.git
