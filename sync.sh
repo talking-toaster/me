@@ -1,2 +1,2 @@
-PUB_KEY=$1
-echo "key=$PUBKEY"
+KEY=$PRIV_KEY
+echo "key=$KEY"
