@@ -2,9 +2,9 @@ KEY=$PRIV_KEY
 
 echo "hello"
 
-mkdir -p /root/.ssh
-echo "$KEY" > /root/.ssh/id_rsa
-chmod 600 /root/.ssh/id_rsa
+sudo mkdir -p /root/.ssh
+sudo echo "$KEY" > /root/.ssh/id_rsa
+sudo chmod 600 /root/.ssh/id_rsa
 mkdir -p ~/.ssh
 cp /root/.ssh/* ~/.ssh/
 
