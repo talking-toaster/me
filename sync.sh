@@ -5,6 +5,7 @@ KEY=$PRIV_KEY
 
 
 echo "start"
+echo "python -V"
 echo `pwd`
 echo `cat /etc/ssh/ssh_config`
 echo "end cat"
