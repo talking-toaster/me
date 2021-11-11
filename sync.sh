@@ -6,7 +6,7 @@ KEY=$PRIV_KEY
 
 echo "start"
 echo `pwd`
-echo `ls``
+echo `ls`
 mkdir -p  ~/.ssh
 echo "$SSH_PRIVATE_KEY" > ~/.ssh/id_rsa
 chmod 600 ~/.ssh/id_rsa
@@ -34,4 +34,3 @@ git fetch -p origin
 # Exclude refs created by GitHub for pull request.
 git for-each-ref --format 'delete %(refname)' refs/pull | git update-ref --stdin
 git push --mirror
-
