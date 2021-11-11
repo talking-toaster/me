@@ -1,8 +1,7 @@
-FROM python:3.8-alpine
+FROM alpine
 
-RUN apt install --no-cache git openssh-client && \
-  echo "efnflasndfla" >> /etc/ssh/ssh_config
+RUN apk add --no-cache git openssh-client
 
 ADD *.sh /
 
-ENTRYPOINT ["/sync.sh"]
+ENTRYPOINT ["/entrypoint.sh"]
