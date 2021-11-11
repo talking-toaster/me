@@ -6,13 +6,13 @@ KEY=$PRIV_KEY
 
 echo "start"
 echo `pwd`
-echo `cat /etc/ssh/ssh_config`
+#echo `cat /etc/ssh/ssh_config`
 mkdir -p  ~/.ssh
 echo "$SSH_PRIVATE_KEY" > ~/.ssh/id_rsa
 chmod 600 ~/.ssh/id_rsa
 
 
-#echo "StrictHostKeyChecking no" >> /etc/ssh/ssh_config
+echo "StrictHostKeyChecking no" >> /etc/ssh/ssh_config
 
 SOURCE_DIR=$(basename "$SOURCE_REPO")
 git clone --mirror "git@github.com:freefq/free.git" "git@gitee.com:talking-toaster/we.git" && cd "$SOURCE_DIR"
