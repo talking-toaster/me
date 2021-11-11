@@ -14,8 +14,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     
-      - name: Checkout master
-        uses: actions/checkout@v2
+     # - name: Checkout master
+     #   uses: actions/checkout@v2
           
       - name: test
         env: # 设置环境变量
