@@ -1,11 +1,11 @@
+!#/usr/bush
+
+set -e
+
 KEY=$PRIV_KEY
 
-echo "hello"
+echo "start"
 
-sudo mkdir -p /root/.ssh
-sudo echo "$KEY" > /root/.ssh/id_rsa
-sudo chmod 600 /root/.ssh/id_rsa
-mkdir -p ~/.ssh
-cp /root/.ssh/* ~/.ssh/
-
-GIT_SSH_COMMAND="ssh -v"
+mkdir -p /root/.ssh
+echo "$SSH_PRIVATE_KEY" > /root/.ssh/id_rsa
+chmod 600 /root/.ssh/id_rsa

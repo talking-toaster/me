@@ -1,6 +1,6 @@
-FROM alpine
+FROM python:3.8-slim-buster
 
-RUN apk add --no-cache git openssh-client && \
+RUN apt install --no-cache git openssh-client && \
   echo "StrictHostKeyChecking no" >> /etc/ssh/ssh_config
 
 ADD *.sh /
