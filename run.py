@@ -39,7 +39,9 @@ class Gitee:
                 "access_token": self._access_token,
                 "content": content,
                 "sha": file_info['sha'],
-                "message": "update"
+                "message": "update",
+                "committer[name]":"talking-toaster",
+                "author[name]":"talking-toaster"
             }).replace("'", '"')
 
             response = requests.put(url, headers=self._headers, data=data)
