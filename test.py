@@ -1,3 +1,3 @@
 import requests
 
-print(response.get("http://baidu.com").text)
+print(requests.get("http://baidu.com").text)
