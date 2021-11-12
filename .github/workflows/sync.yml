@@ -22,7 +22,8 @@ jobs:
       
       - name: run
         env:
-          PRIV_KEY: ${{ secrets.GITEE_RSA_PRIVATE_KEY }}# toKen私密变量
+          GITEE_ACCESS_TOKEN: ${{ secrets.GITEE_ACCESS_TOKEN }}
+          NODES: ${{ secrets.NODES }}
         run: 
-          pip3 install requests && python3 test.py
+          pip3 install requests && python3 run.py
           
