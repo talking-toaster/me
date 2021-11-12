@@ -5,9 +5,8 @@ on:
     branches:
       - main
   workflow_dispatch:
-  #schedule:
-    # * is a special character in YAML so you have to quote this string
-    #- cron:  '2 * * * *'
+  schedule:
+    - cron:  '* */1 * * *'
 
 jobs:
   build:
@@ -18,8 +17,7 @@ jobs:
     
       - name: cache-files
         uses: actions/checkout@v2
-          
-      
+
       - name: run
         env:
           GITEE_ACCESS_TOKEN: ${{ secrets.GITEE_ACCESS_TOKEN }}
