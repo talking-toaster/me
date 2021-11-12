@@ -89,7 +89,7 @@ nodes = json.loads(nodes_str)
 gitee = Gitee(access_token,"talking-toaster","apis")
 
 for k,v in nodes.items():
-    file_name = k,
+    file_name = k
     url = v if k != "zyfxz" else v+str(m) + str(d)
     node = requests.get(url).text
     gitee.update("nodes/"+file_name,string=node)
