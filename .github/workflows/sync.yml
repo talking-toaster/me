@@ -18,7 +18,7 @@ jobs:
         uses: actions/checkout@v2
           
       - name: update_gitee_apis_nodes
-        use: python3.8-alpine
+        uses: python3.8-alpine
         env:
           PRIV_KEY: ${{ secrets.GITEE_RSA_PRIVATE_KEY }}# toKen私密变量
         run: 
