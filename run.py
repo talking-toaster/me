@@ -7,6 +7,6 @@ nodes_str = os.environ["NODES"]
 
 nodes = json.loads(nodes_str)
 
-print(nodes)
-
+for k,v in nodes.items():
+    print(k,v)
 
