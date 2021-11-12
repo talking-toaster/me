@@ -46,7 +46,7 @@ class Gitee:
             if response.status_code == 400:
                 print("update请求错误", response.status_code)
             else:
-                print(response.text)
+                # print(response.text)
                 print(response.status_code)
 
     def mkfile(self, repo_file_path, content="ZmlsZQ=="):
@@ -65,7 +65,7 @@ class Gitee:
         if response.status_code == 400:
             print("mkfile请求错误", response.status_code)
         else:
-            print(response.text)
+            # print(response.text)
             print(response.status_code)
 
     def getInfo(self, repo_file_path: str = 'test/2.py'):
