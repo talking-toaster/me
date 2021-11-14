@@ -92,7 +92,11 @@ gitee = Gitee(access_token,"talking-toaster","apis")
 
 for k,v in nodes.items():
     file_name = k
-    url = v if k != "zyfxz" else v+str(m) + str(d)
+    if k=="zyfxz":
+        url= v + str(m) + str(d)
+        print(url[-8:])
+    else:
+        url = v
     node = requests.get(url).text
     gitee.update("nodes/"+file_name,string=node)
 
