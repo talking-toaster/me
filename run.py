@@ -81,8 +81,10 @@ class Gitee:
         return response.json()
 
 
-m = datetime.datetime.now().month
-d = datetime.datetime.now().day
+today = datetime.datetime.now()
+yesterday = today - datetime.timedelta(days=1)
+s_today = str(today.month)+str(today.day)
+s_yesterday = str(yesterday.month)+str(yesterday.day)
 
 access_token = os.environ["GITEE_ACCESS_TOKEN"]
 nodes_str = os.environ["NODES"]
@@ -93,10 +95,13 @@ gitee = Gitee(access_token,"talking-toaster","apis")
 for k,v in nodes.items():
     file_name = k
     if k=="zyfxz":
-        url= v + str(m) + str(d)
-        print(url[-8:])
+        url = v+s_today
+        node = requests.get(url)
+        if node.status_code == 404:
+            url = v+s_yesterday
+            node = requests.get(url)
     else:
         url = v
-    node = requests.get(url).text
-    gitee.update("nodes/"+file_name,string=node)
+        node = requests.get(url)
+    gitee.update("nodes/"+file_name,string=node.text)
 
