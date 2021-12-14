@@ -2,6 +2,7 @@ import os
 import json
 import base64
 import datetime
+import time
 from urllib import parse
 import requests
 
@@ -93,15 +94,21 @@ nodes = json.loads(nodes_str)
 gitee = Gitee(access_token,"talking-toaster","apis")
 
 for k,v in nodes.items():
-    file_name = k
-    if k=="zyfxz":
-        url = v+s_today
-        node = requests.get(url)
-        if node.status_code == 404:
-            url = v+s_yesterday
+    try:
+        file_name = k
+        if k=="zyfxz":
+            url = v+s_today
             node = requests.get(url)
-    else:
-        url = v
-        node = requests.get(url)
-    gitee.update("nodes/"+file_name,string=node.text)
+            if node.status_code == 404:
+                url = v+s_yesterday
+                node = requests.get(url)
+        else:
+            url = v
+            node = requests.get(url)
+        time.sleep(1)
+        gitee.update("nodes/"+file_name,string=node.text)
+        time.sleep(3)
+    except Exception as e:
+        print(e)
+
 
