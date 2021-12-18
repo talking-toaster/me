@@ -125,6 +125,7 @@ for k,v in nodes.items():
                 url = v+s_yesterday
                 node = requests.get(url)
         elif k=="ThekingMX1998":
+            url = v
             node = mid_ThekingMX1998(url)
         else:
             url = v
