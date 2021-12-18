@@ -49,8 +49,9 @@ class Gitee:
             if response.status_code == 400:
                 print("update请求错误", response.status_code)
             else:
+                pass
                 # print(response.text)
-                print(response.status_code)
+                #print(response.status_code)
 
     def mkfile(self, repo_file_path, content="ZmlsZQ=="):
         owner = self._owner
@@ -68,8 +69,9 @@ class Gitee:
         if response.status_code == 400:
             print("mkfile请求错误", response.status_code)
         else:
+            pass
             # print(response.text)
-            print(response.status_code)
+            #print(response.status_code)
 
     def getInfo(self, repo_file_path: str = 'test/2.py'):
         owner = self._owner
@@ -130,8 +132,10 @@ for k,v in nodes.items():
         else:
             url = v
             node = requests.get(url)
+        print("get "+k)
         time.sleep(1)
         gitee.update("nodes/"+file_name,string=node.text)
+        print("update "+k)
         time.sleep(3)
     except Exception as e:
         print(e)
