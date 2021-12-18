@@ -102,7 +102,7 @@ def mid_ThekingMX1998(url):
     'accept-language': 'zh-CN,zh;q=0.9',
     }
     response = requests.get(url,headers=headers)
-    return response.text
+    return response
 
 today = datetime.datetime.now()
 yesterday = today - datetime.timedelta(days=1)
